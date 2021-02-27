@@ -1,0 +1,166 @@
+package MovieMakerProject;
+
+import java.util.Scanner;
+
+public class MovieMaker {
+  public static void main(String[] args) {
+//  private static BackendInterface movies = new BackendInterface();
+
+    System.out.println("Welcome to the Movie Mapper program!");
+    baseMenu();
+  }
+
+  public static void baseMenu() {
+    Scanner reply1 = new Scanner(System.in);
+    String navigation;
+    
+//     displays the top 3 movies
+//   for(int i=0;i<movies.getThreeMovies();i++) {
+//     System.out.print(movies.getThreeMovies().get(i));
+//   }
+
+    System.out.println("Base Menu:");
+    System.out.println("Enter 'x' to exit");
+    System.out.println("Enter 'g' to enter genre selection menu");
+    System.out.println("Enter 'r' to enter ratings selection menu");
+    navigation = reply1.nextLine();
+
+    if (navigation.equals("g")) {
+      genreSelectionMenu();
+    } else if (navigation.equals("r")) {
+      ratingsSelectionMenu();
+    } else if (navigation.equals("x")) {
+      System.out.println("Thanks for using the Movie Mapper program!");
+    } else {
+      // throws exception or something
+    }
+  }
+
+  public static void genreSelectionMenu() {
+    Scanner reply = new Scanner(System.in);
+    String navigation;
+    String selection;
+    String genreSelection;
+    String repeat;
+    int j = 1;
+//  List<String> allGenres = movies.getAllGenres();
+//  List<String> selectedGenres = movies.getGenres();
+
+    System.out.println("Genre Selection Menu:");
+    System.out.print("Genres Available: ");
+    
+//    for(int i=0;i<allGenres.size();i++) {
+//      System.out.print(j + ". " + allGenres.get(i) + " ");
+//      j++;
+//    }
+    System.out.print("Genres Selected: ");
+//  for(int i=0;i<selectedGenres.size();i++) {
+//    System.out.print(selectedGenres.get(i) + " ");
+//  }
+    System.out.println("Do you want to select or deselect a genre (select/deselect)?");
+    selection = reply.nextLine();
+    if(selection.equals("select")) {
+      System.out.println("Which genre did you want to select?");
+      genreSelection = reply.nextLine();
+    }
+    System.out.println("Enter 'x' to exit to base menu");
+    navigation = reply.nextLine();
+
+    if (navigation.equals("x")) {
+      baseMenu();
+    }
+  }
+
+  public static void ratingsSelectionMenu() {
+    Scanner reply = new Scanner(System.in);
+    String navigation;
+    String selection;
+    String ratingSelection;
+    String repeat;
+//  List<String> avgRatings = movies.getAvgRatings();
+
+    System.out.println("Rating Selection Menu:");
+    System.out.print("Ratings Selected: ");
+//    for(int i=0;i<avgRatings.size();i++) {
+//      System.out.print(avgRatings.get(i) + " ");
+//    }
+    System.out.println(" ");
+
+    System.out.println("Do you want to add or remove a rating (add/remove)?");
+    selection = reply.nextLine();
+    if (selection.equals("add")) {
+      System.out.println("Which rating do you want to add (1-10)?");
+      ratingSelection = reply.nextLine();
+//      if(movies.containsRating(ratingSelection)) {
+//        System.out.println("Rating is already added");
+//      } else {
+//        movies.addAvgRating(ratingSelection);
+//      }
+    } else if (selection.equals("remove")) {
+      System.out.println("Which rating do you want to remove (1-10)?");
+      ratingSelection = reply.nextLine();
+//    if(!movies.containsRating(ratingSelection)) {
+//      System.out.println("Rating is already removed");
+//    } else {
+//      movies.removeAvgRating(ratingSelection);
+//    }
+    }
+    System.out.println("Ratings Selected: ");
+//  for(int i=0;i<avgRatings.size();i++) {
+//    System.out.print(avgRatings.get(i) + " ");
+//  }
+    System.out.println("Do you want to add/remove another rating (yes/no)?");
+    repeat = reply.nextLine();
+    while(repeat.equals("yes")) {
+      System.out.println("Do you want to add or remove a rating (add/remove)?");
+      selection = reply.nextLine();
+      if (selection.equals("add")) {
+        System.out.println("Which rating do you want to add (1-10)?");
+        ratingSelection = reply.nextLine();
+//        if(movies.containsRating(ratingSelection)) {
+//          System.out.println("Rating is already added");
+//        } else {
+//          movies.addAvgRating(ratingSelection);
+//        }
+      } else if (selection.equals("remove")) {
+        System.out.println("Which rating do you want to remove (1-10)?");
+        ratingSelection = reply.nextLine();
+//      if(!movies.containsRating(ratingSelection)) {
+//        System.out.println("Rating is already removed");
+//      } else {
+//        movies.removeAvgRating(ratingSelection);
+//      }
+      }
+      System.out.println("Ratings Selected: ");
+//    for(int i=0;i<avgRatings.size();i++) {
+//      System.out.print(avgRatings.get(i) + " ");
+//    }
+        System.out.println("Do you want to add/remove another rating (yes/no)?");
+        repeat = reply.nextLine();
+      }
+//    print movies that contain the avg ratings
+      System.out.println("Enter 'x' to exit to base menu");
+      navigation = reply.nextLine();
+      if (navigation.equals("x")) {
+        baseMenu();
+      }
+    }
+//  public boolean containsRating(String rating) {
+//     List<String> avgRatings = movies.getAvgRatings();
+//     for(int i=0;i<avgRatings;i++) {
+//       if(avgRating.get(i).equals(rating)) {
+//         return true;
+//       }
+//     }
+//     return false;
+//   }
+//  public boolean containsGenre(String genre) {
+//      List<String> genres = movies.getgenres();
+//      for(int i=0;i<genres;i++) {
+//          if(genres.get(i).equals(genre)) {
+//          return true;
+//        }
+//      }
+//      return false;
+//    }
+  }
