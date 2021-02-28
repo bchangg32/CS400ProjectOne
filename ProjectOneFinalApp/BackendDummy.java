@@ -1,3 +1,5 @@
+package MovieMakerProject;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -45,7 +47,7 @@ public class BackendDummy implements BackendInterface {
      */
     @Override
     public void addAvgRating(String rating) {
-        // TODO: Fixme! Add dummy implementation similar to addGenre method.
+        System.out.println("Dummy backend; will ignore genre to add (" + rating + ")");
     }
 
     /**
@@ -54,7 +56,7 @@ public class BackendDummy implements BackendInterface {
      */
     @Override
     public void removeGenre(String genre) {
-        // TODO: Fixme! Add dummy implementation similar to addGenre method.
+        System.out.println("Dummy backend; will ignore genre to remove (" + genre + ")");
     }
 
     /**
@@ -63,7 +65,7 @@ public class BackendDummy implements BackendInterface {
      */
     @Override
     public void removeAvgRating(String rating) {
-        // TODO: Fixme! Add dummy implementation similar to addGenre method.
+        System.out.println("Dummy backend; will ignore rating to remove (" + rating + ")");
     }
 
     /**
@@ -81,8 +83,7 @@ public class BackendDummy implements BackendInterface {
      */
     @Override
     public List<String> getAvgRatings() {
-        // TODO: Fixme! Add dummy implementation similar to getGenres.
-        return null;
+        return Arrays.asList(new String[] {"1","2","3","4","5","6","7","8","9","10"});
     }
 
     /**
@@ -155,7 +156,80 @@ public class BackendDummy implements BackendInterface {
         });
         // TODO: Fixme! Add two more example movies to the list before returning it (could be
         //       ficticious ones).
+        movies.add(new MovieInterface() {
+
+          @Override
+          public String getTitle() {
+            return "Avengers";
+          }
+
+          @Override
+          public Integer getYear() {
+            return 0;
+          }
+
+          @Override
+          public List<String> getGenres() {
+            return Arrays.asList(new String[] { "Action", "Fiction" });
+          }
+
+          @Override
+          public String getDirector() {
+            return "0";
+          }
+
+          @Override
+          public String getDescription() {
+            return "0";
+          }
+
+          @Override
+          public Float getAvgVote() {
+            return 8.5f;
+          }
+
+          @Override
+          public int compareTo(MovieInterface otherMovie) {
+            return 0;
+          }
+        });
+        movies.add(new MovieInterface() {
+
+          @Override
+          public String getTitle() {
+            return "Parasite";
+          }
+
+          @Override
+          public Integer getYear() {
+            return 0;
+          }
+
+          @Override
+          public List<String> getGenres() {
+            return Arrays.asList(new String[] { "Mystery", "Thriller" });
+          }
+
+          @Override
+          public String getDirector() {
+            return "0";
+          }
+
+          @Override
+          public String getDescription() {
+            return "0";
+          }
+
+          @Override
+          public Float getAvgVote() {
+            return 9.0f;
+          }
+
+          @Override
+          public int compareTo(MovieInterface otherMovie) {
+            return 0;
+          }
+        });
         return movies;
     }
 }
-
